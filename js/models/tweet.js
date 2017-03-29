@@ -10,8 +10,7 @@ class Tweet {
   }
 
   static tweetExtractor(){
-    let tweet = this.new Tweet(Api.getJSON(url-stripped))
-
+    // let tweet = this.new(Api.getJSON(url-stripped))
   }
 
 }

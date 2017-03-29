@@ -1,9 +1,9 @@
 $(() => {
   let $target = $('.tweet-url-form')
   $('.tweet-url-form').on('submit', () => {
-    let raw_tweet_data = TweetAPIController.new
+    event.preventDefault()
+    let url = $('#tweet-url-text').val()
+    let raw_tweet_data = new TweetAPIController(url)
      return raw_tweet_data
-  }).then((raw_tweet_data) => {
-    debugger;
   })
 })
