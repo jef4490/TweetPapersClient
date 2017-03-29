@@ -1,5 +1,7 @@
 class Api {
-  getJSON(resource){
+
+  static getJSON(resource){
     return $.getJSON(`http://localhost:3000/${resource}`)
   }
+
 }
