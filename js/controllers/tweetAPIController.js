@@ -10,4 +10,8 @@ class TweetAPIController {
   retrieveTweet() {
     return Api.getJSON(`tweet/${this.tweetNumber}`)
   }
+
+  static retrieveTimeline(tweet) {
+    return Api.getJSON(`tweet/${tweet.tweetId}/${tweet.userId}/${parseInt(tweet.tweetCount)*2}`)
+  }
 }

@@ -1,11 +1,15 @@
 $(() => {
+  var tweet = ''
   let $target = $('.tweet-url-form')
   $('.tweet-url-form').on('submit', () => {
     event.preventDefault()
     let url = $('#tweet-url-text').val()
-    let raw_tweet_data = new TweetAPIController(url)
-    raw_tweet_data.retrieveTweet().then((raw_tweet_data) => {
-      debugger;
+    let rawTweetData = new TweetAPIController(url)
+    rawTweetData.retrieveTweet().then((rawTweetData) => {
+      tweet = new Tweet(rawTweetData)
+      TweetAPIController.retrieveTimeline(tweet).then((timeline) => {
+        let timelineObject = new Timeline(timeline, tweet)
+      })
     })
   })
 })
