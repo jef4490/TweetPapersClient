@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/wrappers/api.js"></script>
+    <script src="/js/models/tweet.js"></script>
+    <script src="/js/models/timeline.js"></script>
+    <script src="/js/models/essay.js"></script>
+    <script src="/js/models/essayTweet.js"></script>
+    <script src="/js/controllers/tweetAPIController.js" charset="utf-8"></script>
+    <script src="/js/controllers/tweetEssayController.js" charset="utf-8"></script>
+    <!-- <script src="/js/views/cocktailView.js" charset="utf-8"></script> -->
+    <script src="/js/app.js"></script>
+    <script src="/js/write.js"></script>
+    <title>Tweet Papers Client</title>
+  </head>
+  <body>
+    <div class="write-wrapper container">
+      <div class="row">
+        <h1>Tweet Papers</h1>
+        <h4>When you can't fit the profound in 140 characters.</h4>
+      </div>
+      <div class="row">
+        <div class="prompt">
+          <p>To get started, copy/paste your essay in the text box below.</p>
+          <form class="essay-text-form" id="essay-text-form">
+            <textarea placeholder="Your essay here" class="write-essay-text" id="write-essay-text"/></textarea>
+            <br>
+            <input type="Submit" value="Compose Essay" id="write-essay-submit"/>
+          </form>
+        </div> <!-- prompt -->
+        <br>
+        <div class="tweet-essay-compiled">
+        </div>
+      </div><!-- row-->
+    </div> <!-- Read Wrapper container-->
+  </body>
+</html>

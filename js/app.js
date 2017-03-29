@@ -1,3 +1,4 @@
+// Read Tweet Essay
 $(() => {
   var tweet = ''
   let $target = $('.tweet-essay-compiled')
@@ -14,3 +15,5 @@ $(() => {
     })
   })
 })
+
+// Write Tweet Essay
