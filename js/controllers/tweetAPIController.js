@@ -1,5 +1,6 @@
 class TweetAPIController {
-  constructor() {
+  constructor(url) {
     debugger;
+    this
   }
 }
