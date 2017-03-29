@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/jef4490/TweetPapersClient/issues"
   },
-  "homepage": "https://github.com/jef4490/TweetPapersClient#readme"
+  "homepage": "https://github.com/jef4490/TweetPapersClient#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
 }
