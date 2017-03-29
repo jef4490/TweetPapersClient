@@ -1,43 +1,28 @@
 class EssayView {
   static renderParagraph($target, essay){
-    debugger
     let essayText = essay.tweets.map((tweet) => {
-      debugger
-      return tweet.text.replace(this.regex, "")
+      return tweet.text.replace(essay.regex, "")
     }).join("")
-    return $target.html(`<p>${essayText}</p>`)
+    let linkText = EssayView.linkFormat(essayText)
+    return $target.html(`<p>${linkText}</p>`)
   }
+
+  static linkFormat(text) {
+    let linkArray = text.split(' ')
+    let regexLink = /(https|ftp|http):\/\/.+[^.!?]/
+    linkArray = linkArray.map((item) => {
+      if (item.search(regexLink) != -1) {
+        let hyperlink = `<a href="${item.match(regexLink)[0]}">${item.match(regexLink)[0]}</a>`
+        if (item.search(/[.!?]$/) != -1) {
+          hyperlink += item.match(/[.!?]$/)[0]
+        }
+        return hyperlink
+      } else {
+        return item
+      }
+    })
+    return linkArray.join(" ")
+  }
+
+  
 }
-
-
-//   // static essayTemplate(essay){
-//   //   return `
-//   //     <h1>${}</h1>
-//   //     <blockquote class="blockquote">
-//   //       <p class="mb-0">${cocktail.description}</p>
-//   //       <footer class="blockquote-footer">${cocktail.source.replace("—", "")}</footer>
-//   //     </blockquote>
-//   //     <ul class="proportions">
-//   //       ${this.proportions(cocktail.proportions)}
-//   //     </ul>
-//   //     <p>${cocktail.instructions}</p>
-//   //   `
-//   // }
-//
-//   // static proportions(proportions){
-//   //   return proportions.map((proportion) => {
-//   //     return `<li>${proportion}</li>`
-//   //   }).join("")
-//   // }
-//   //
-//   // static renderListItems($target, cocktails){
-//   //   let listItems = cocktails.map(this.listItemTemplate)
-//   //   $target.append(listItems)
-//   // }
-//   //
-//   // static listItemTemplate(cocktail) {
-//   //   return `
-//   //   <li class="cocktail-list-item" data-id="${cocktail.id}"><a href="#">${cocktail.name}</a></li>
-//   //   `
-//   // }
-// }

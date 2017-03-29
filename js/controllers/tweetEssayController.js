@@ -9,10 +9,10 @@ class TweetEssayController {
   makeTweets(filteredTweets){
     return filteredTweets.map((tweet) => {
       return new Tweet(tweet)
-    })
+    }).reverse()
   }
 
   render(){
-    return EssayView.renderParagraph(this.target, this)
+    return EssayView.renderParagraph(this.$target, this)
   }
 }
