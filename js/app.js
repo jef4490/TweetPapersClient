@@ -10,6 +10,7 @@ $(() => {
       TweetAPIController.retrieveTimeline(tweet).then((timeline) => {
         let timelineObject = new Timeline(timeline, tweet)
         let x = new TweetEssayController($target, timelineObject)
+
       })
     })
   })
