@@ -24,7 +24,6 @@ class Essay {
       let tweet = new EssayTweet(current)
       this.tweets.push(tweet)
     }
-    debugger;
   }
   // gatherText() {
   //   debugger;
