@@ -1,11 +1,28 @@
 class Essay {
   constructor(text) {
     this.originalText = text
-    // debugger;
-    this.sentences = text.match(/(?!.?!).*?[.?!]+\)?/g)
+    this.i = -1
+    this.links = text.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm)
+    this.linkless = text.replace(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm, `&K^jK&`)
+    this.sentences = this.linkless.match(/(?!.?!).*?[.?!]+\)?/g)
+    this.linkReplacer()
+    this.sentences = this.linkSentences
+    debugger;
     this.tweets = []
     this.constructTweets()
     return this
+  }
+
+  linkReplacer() {
+    this.linkSentences = this.sentences.map( sentence => {
+      if (sentence.match(/\&K\^jK&/g)) {
+        this.links
+        this.i ++
+        return sentence = sentence.replace(/\&K\^jK&/g, this.links[this.i])
+      }
+      return sentence
+    })
+    return this.linkSentences
   }
 
   constructTweets() {
