@@ -15,8 +15,8 @@ class EssayView {
     let linkText = EssayView.linkFormat(essayText)
     return `<p id="essay-text">${linkText}</p><br />
     <div class='row'>
-    <input type="Submit" value="Copy To Clipboard" id="copy-essay"/><br />
-    <input type="Submit" value="Generate Embed HTML" id="generate-essay-html"/>
+    <input type="Submit" class="col-md-3" value="Copy To Clipboard" id="copy-essay"/>
+    <input type="Submit" class="col-md-3" value="Generate Embed HTML" id="generate-essay-html"/>
     </div>`
 
   }
@@ -24,7 +24,7 @@ class EssayView {
   static userTemplate(essay) {
     let user = essay.tweets[0].user
     return `<h2><a href="${user.link}">${user.screenName}</a></h2>
-    <h2><a href="${essay.tweets[0].tweetLink}">--Start of Essay--</a></h2>
+    ${HtmlGeneratorView.tweetTemplate(essay.tweets[0])}
     <img src="${user.profilePicture}"/>
     <h3>on ${essay.tweets[0].date}</h3>`
   }
