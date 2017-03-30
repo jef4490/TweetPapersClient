@@ -20,30 +20,40 @@
     <script src="/js/wrappers/api.js"></script>
     <script src="/js/models/tweet.js"></script>
     <script src="/js/models/timeline.js"></script>
+    <script src="/js/models/essay.js"></script>
+    <script src="/js/models/essayTweet.js"></script>
     <script src="/js/views/essayView.js"></script>
+    <script src="/js/views/essayTweetsView.js" charset="utf-8"></script>
     <script src="/js/views/initialView.js"></script>
+    <script src="/js/views/readView.js"></script>
+    <script src="/js/views/writeView.js"></script>
     <script src="/js/views/htmlGeneratorView.js"></script>
     <script src="/js/controllers/tweetAPIController.js" charset="utf-8"></script>
-    <script src="/js/controllers/initialController.js" charset="utf-8"></script>
+    <script src="/js/controllers/readController.js" charset="utf-8"></script>
     <script src="/js/controllers/tweetEssayController.js" charset="utf-8"></script>
+    <script src="/js/controllers/essayTweetsController.js" charset="utf-8"></script>
+    <script src="/js/controllers/writeController.js" charset="utf-8"></script>
+    <script src="/js/controllers/initialController.js" charset="utf-8"></script>
     <!-- <script src="/js/views/cocktailView.js" charset="utf-8"></script> -->
     <script src="/js/app.js"></script>
     <title>Tweet Papers Client</title>
   </head>
   <body>
     <div class="read-wrapper container">
-      <div class="col-xs-12" style="height:200px; row">
+      <div class="input">
+        <div class="col-xs-12 button row">
+          <div class="read bordered hover" style="height:100px; row" >
+            <h1 class='off'>Read a Twitter Essay from a link!</h1>
+            <h3 class='on'>copy and paste a twitter url from a....</h3>
+          </div>
+          <div class="write bordered hover" style="height:100px; row">
+            <h1 class='off'>Write a Twitter Essay!</h1>
+            <h3 class='on'>copy and paste an essay into a series of tweets....</h3>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 button row">
-        <div class="render bordered hover" style="height:100px; row" >
-          <h1 class='off'>Render a Twitter Essay from a link!</h1>
-          <h1 class='on'>ON!</h1>
-        </div>
-        <div class="write bordered hover" style="height:100px; row">
-          <h1 class='off'>Write a Twitter Essay!</h1>
-          <h1 class='on'>ON!</h1>
-        </div>
 
+      <div class="output">
       </div>
     </div> <!-- Read Wrapper container-->
   </body>
