@@ -2,7 +2,7 @@ class Essay {
   constructor(text) {
     this.originalText = text
     // debugger;
-    this.sentences = text.match(/["']?[A-Z][^.?!]+((?![.?!]['"]?\s["']?[A-Z][^.?!]).)+[.?!'"]+/g)
+    this.sentences = text.match(/(?!.?!).*?[.?!]+\)?/g)
     this.tweets = []
     this.constructTweets()
     return this
@@ -13,6 +13,7 @@ class Essay {
   // Add spaces to short sentence combinations
   constructTweets() {
     let i = 0
+    debugger;
     while (i < this.sentences.length) {
       if (this.sentences[i].length > 135) {
         let midpoint = Math.floor(this.sentences[i].length/2)
