@@ -4,13 +4,21 @@ class EssayView {
     let essayText = essay.tweets.map((tweet) => {
       return tweet.text.replace(essay.regex, "")
     }).join("")
-    let linkText = EssayView.linkFormat(essayText)
-    return $target.find('#essay').html(`<p>${linkText}</p><br />
-    <input type="Submit" value="Copy To Clipboard" id="copy-essay"/>`)
+    return $target.find('#essay').html(EssayView.essayTemplate(essayText))
   }
 
   static renderUser($target, essay){
     return $target.find('#user').html(EssayView.userTemplate(essay))
+  }
+
+  static essayTemplate(essayText) {
+    let linkText = EssayView.linkFormat(essayText)
+    return `<p id="essay-text">${linkText}</p><br />
+    <div class='row'>
+    <input type="Submit" value="Copy To Clipboard" id="copy-essay"/><br />
+    <input type="Submit" value="Generate Embed HTML" id="generate-essay-html"/>
+    </div>`
+
   }
 
   static userTemplate(essay) {
