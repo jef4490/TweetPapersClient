@@ -8,7 +8,8 @@
     <script src="/js/wrappers/api.js"></script>
     <script src="/js/models/tweet.js"></script>
     <script src="/js/models/timeline.js"></script>
-    <script src="/js/views/EssayView.js"></script>
+    <script src="/js/views/essayView.js"></script>
+    <script src="/js/views/htmlGeneratorView.js"></script>
     <script src="/js/controllers/tweetAPIController.js" charset="utf-8"></script>
     <script src="/js/controllers/tweetEssayController.js" charset="utf-8"></script>
     <!-- <script src="/js/views/cocktailView.js" charset="utf-8"></script> -->
@@ -30,9 +31,14 @@
           </form>
         </div> <!-- prompt -->
         <br>
-        <div class="tweet-essay-compiled">
+        <div class="tweet-essay-window row">
+          <div id="user" class="row">
+          </div>
+          <div id="essay" class="row">
+          </div>
         </div>
-      </div><!-- row-->
+        <div id="html-generator" class="row">
+        </div>
     </div> <!-- Read Wrapper container-->
   </body>
 </html>
