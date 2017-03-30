@@ -1,12 +1,16 @@
 class Essay {
   constructor(text) {
     this.originalText = text
-    this.sentences = text.match(/\(?[^\.\?\!]+[\.!\?]\)?/g)
+    // debugger;
+    this.sentences = text.match(/["']?[A-Z][^.?!]+((?![.?!]['"]?\s["']?[A-Z][^.?!]).)+[.?!'"]+/g)
     this.tweets = []
     this.constructTweets()
     return this
   }
 
+  //Don't let it split a word, Jeff!
+  //Fix the problems, Jeff!
+  // Add spaces to short sentence combinations
   constructTweets() {
     let i = 0
     while (i < this.sentences.length) {

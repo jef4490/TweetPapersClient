@@ -5,6 +5,6 @@ $(() => {
     let $text = $('#write-essay-text').val()
     let $target = $('.essay-tweets-display')
     let essay = new Essay($text)
-    let y = new essayTweetsController($target, essay)
+    let y = new EssayTweetsController($target, essay)
   })
 })

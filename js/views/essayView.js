@@ -24,5 +24,5 @@ class EssayView {
     return linkArray.join(" ")
   }
 
-  
+
 }
