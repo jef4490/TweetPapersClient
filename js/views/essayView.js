@@ -13,9 +13,7 @@ class EssayView {
   }
 
   static userTemplate(essay) {
-
     let user = essay.tweets[0].user
-    debugger
     return `<h2><a href="${user.link}">${user.screenName}</a></h2>
     <h2><a href="${essay.tweets[0].tweetLink}">--Start of Essay--</a></h2>
     <img src="${user.profilePicture}"/>

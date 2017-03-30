@@ -4,7 +4,6 @@ $(() => {
   let $target = $('.tweet-essay-window')
   $('.tweet-url-form').on('submit', () => {
     event.preventDefault()
-
     let url = $('#tweet-url-text').val()
     let rawTweetData = new TweetAPIController(url)
     rawTweetData.retrieveTweet().then((rawTweetData) => {
