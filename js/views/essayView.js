@@ -5,7 +5,8 @@ class EssayView {
       return tweet.text.replace(essay.regex, "")
     }).join("")
     let linkText = EssayView.linkFormat(essayText)
-    return $target.find('#essay').html(`<p>${linkText}</p>`)
+    return $target.find('#essay').html(`<p>${linkText}</p><br />
+    <input type="Submit" value="Copy To Clipboard" id="copy-essay"/>`)
   }
 
   static renderUser($target, essay){
