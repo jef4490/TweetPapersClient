@@ -5,7 +5,15 @@ class Tweet {
     this.userId = tweet.user.id
     this.regex = null
     this.tweetId = tweet.id_str
+    this.user = {}
+    this.user.screenName = `@${tweet.user.screen_name}`
+    this.user.name = tweet.user.name
+    this.user.link = `https://twitter.com/${tweet.user.screen_name}`
+    this.user.profilePicture = tweet.user.profile_image_url_https
+    this.tweetLink = `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
+    this.date = tweet.created_at
     this.tweet_number()
+
   }
 
   tweet_number() {

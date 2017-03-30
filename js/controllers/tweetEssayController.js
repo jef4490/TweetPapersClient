@@ -3,16 +3,21 @@ class TweetEssayController {
     this.$target = $target
     this.regex = timelineObject.regex
     this.tweets = this.makeTweets(timelineObject.filteredTimeline)
-    this.render()
+    this.renderUser()
+    this.renderEssay()
   }
 
   makeTweets(filteredTweets){
     return filteredTweets.map((tweet) => {
       return new Tweet(tweet)
-    }).reverse()
+    })
   }
 
-  render(){
+  renderEssay(){
     return EssayView.renderParagraph(this.$target, this)
+  }
+
+  renderUser(){
+    return EssayView.renderUser(this.$target, this)
   }
 }

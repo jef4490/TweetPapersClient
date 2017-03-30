@@ -1,10 +1,25 @@
 class EssayView {
+
   static renderParagraph($target, essay){
     let essayText = essay.tweets.map((tweet) => {
       return tweet.text.replace(essay.regex, "")
     }).join("")
     let linkText = EssayView.linkFormat(essayText)
-    return $target.html(`<p>${linkText}</p>`)
+    return $target.find('#essay').html(`<p>${linkText}</p>`)
+  }
+
+  static renderUser($target, essay){
+    return $target.find('#user').html(EssayView.userTemplate(essay))
+  }
+
+  static userTemplate(essay) {
+
+    let user = essay.tweets[0].user
+    debugger
+    return `<h2><a href="${user.link}">${user.screenName}</a></h2>
+    <h2><a href="${essay.tweets[0].tweetLink}">--Start of Essay--</a></h2>
+    <img src="${user.profilePicture}"/>
+    <h3>on ${essay.tweets[0].date}</h3>`
   }
 
   static linkFormat(text) {
@@ -23,6 +38,5 @@ class EssayView {
     })
     return linkArray.join(" ")
   }
-
 
 }

@@ -1,7 +1,7 @@
 // Read Tweet Essay
 $(() => {
   var tweet = ''
-  let $target = $('.tweet-essay-compiled')
+  let $target = $('.tweet-essay-window')
   $('.tweet-url-form').on('submit', () => {
     event.preventDefault()
 
@@ -12,7 +12,6 @@ $(() => {
       TweetAPIController.retrieveTimeline(tweet).then((timeline) => {
         let timelineObject = new Timeline(timeline, tweet)
         let x = new TweetEssayController($target, timelineObject)
-        
       })
     })
   })
