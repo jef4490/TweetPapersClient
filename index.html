@@ -2,6 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style>
+
+    .bordered {
+      padding: 20px;
+      border: 2px dotted black;
+    }
+
+    .on { display: none; user-select: none; cursor: hand;}
+    .hover:hover .off { display: none; user-select: none;}
+    .hover:hover .on { display: inline; user-select: none; cursor: hand;}
+
+    </style>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -9,8 +21,10 @@
     <script src="/js/models/tweet.js"></script>
     <script src="/js/models/timeline.js"></script>
     <script src="/js/views/essayView.js"></script>
+    <script src="/js/views/initialView.js"></script>
     <script src="/js/views/htmlGeneratorView.js"></script>
     <script src="/js/controllers/tweetAPIController.js" charset="utf-8"></script>
+    <script src="/js/controllers/initialController.js" charset="utf-8"></script>
     <script src="/js/controllers/tweetEssayController.js" charset="utf-8"></script>
     <!-- <script src="/js/views/cocktailView.js" charset="utf-8"></script> -->
     <script src="/js/app.js"></script>
@@ -18,33 +32,19 @@
   </head>
   <body>
     <div class="read-wrapper container">
-      <div class="row">
-        <h1>Tweet Papers</h1>
-        <h4>When you can't fit the profound in 140 characters.</h4>
+      <div class="col-xs-12" style="height:200px; row">
       </div>
-      <div class="row">
-        <div class="prompt">
-          <p>To get started, copy + paste the url of the a tweet from the tweet essay.</p>
-          <form class="tweet-url-form" id="tweet-url-form">
-            <input type="text" placeholder="Tweet URL" class="Tweet-URL-text" id="tweet-url-text"/>
-            <input type="Submit" value="Compose Essay" id="tweet-submit"/>
-          </form>
-        </div> <!-- prompt -->
-        <br>
-        <div class="tweet-essay-window">
-          <div id="user" class="row">
-          </div>
-          <div id="essay" class="row">
-          </div>
+      <div class="col-xs-12 button row">
+        <div class="render bordered hover" style="height:100px; row" >
+          <h1 class='off'>Render a Twitter Essay from a link!</h1>
+          <h1 class='on'>ON!</h1>
         </div>
-        <div id="html-generator" class="row">
-          <div id="tweet-render" class="col-md-6">
-          </div>
-          <div id="html-render" class="col-md-6">
-          </div>
+        <div class="write bordered hover" style="height:100px; row">
+          <h1 class='off'>Write a Twitter Essay!</h1>
+          <h1 class='on'>ON!</h1>
         </div>
-        <div class="col-xs-12" style="height:50px;">
-        </div>
+
+      </div>
     </div> <!-- Read Wrapper container-->
   </body>
 </html>
