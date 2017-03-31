@@ -15,6 +15,7 @@ class TweetEssayController {
 
   renderEssay(){
     EssayView.renderParagraph(this.$target, this)
+    this.setParagraphListener()
     this.setEmbedListener()
     return this.setEssayCopyListener()
   }
@@ -32,6 +33,7 @@ class TweetEssayController {
       range.selectNodeContents(text);
       selection.removeAllRanges();
       selection.addRange(range);
+
       document.execCommand('copy');
     })
   }
@@ -42,4 +44,21 @@ class TweetEssayController {
     })
   }
 
+  setParagraphListener() {
+    $(window).keydown((e) => {
+      if (e.key == "Alt") {
+        $('p').on("click", (event) => {
+          let $paragraphBreak = event.target
+          if ($paragraphBreak.dataset.type == 's') {
+            $( '</p><p>' ).insertBefore( $paragraphBreak )
+          } else {
+          }
+        })
+      } else {
+      }
+    })
+    $(window).keyup((e) => {
+        $('p').off()
+    })
+  }
 }

@@ -1,8 +1,9 @@
 class EssayView {
 
   static renderParagraph($target, essay){
-    let essayText = essay.tweets.map((tweet) => {
-      return tweet.text.replace(essay.regex, "")
+    let essayText = essay.tweets.map((tweet, index) => {
+      let text = tweet.text.replace(essay.regex, "")
+      return EssayView.spanFormat(text, index)
     }).join("")
     return $target.find('#essay').html(EssayView.essayTemplate(essayText))
   }
@@ -29,14 +30,24 @@ class EssayView {
     `
   }
 
+  static spanFormat(text, index) {
+    let startTag = `<span data-type="s" data-id="${index}" >`
+    let closeTag = '</span>'
+    let wordArr = text.split(" ")
+    wordArr.push(closeTag)
+    wordArr.unshift(startTag)
+    return wordArr.join(" ")
+  }
+
   static linkFormat(text) {
     let wordArray = text.split(' ')
     let regexLink = /(https|ftp|http):\/\/.+[^.!?)(]/
     wordArray = wordArray.map((item) => {
       if (item.search(regexLink) != -1) {
         let hyperlink = `<a href="${item.match(regexLink)[0]}">${item.match(regexLink)[0]}</a>`
-        if (item.search(/[.!?)()]$/) != -1) {
-          hyperlink += item.match(/[.!?)(]$/)[0]
+        if (item.search(/[.!?)()]$/) != -1 || item.search(/^[.!?)()]/) != -1) {
+          hyperlink += item.match(/[.!?)(]$/)
+          hyperlink = item.match(/^[.!?)(]/) + hyperlink
         }
         return hyperlink
       } else {
@@ -45,9 +56,4 @@ class EssayView {
     })
     return wordArray.join(" ")
   }
-
 }
-
-// <h2><a href="${user.link}">${user.screenName}</a></h2>
-// <img src="${user.profilePicture}"/>
-// <h3>on ${essay.tweets[0].date}</h3>

@@ -9,4 +9,5 @@ class EssayTweetsController {
     return EssayTweetsView.renderTweets(this.$target, this.tweets)
   }
 
+
 }

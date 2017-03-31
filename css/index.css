@@ -88,6 +88,10 @@ div {
     margin-bottom: 1em;
   }
 
+  #essay-text span:hover {
+    background-color: rgb(232,245,253);
+  }
+
 /* ------- WRITE SPECIFIC ----------- */
 
 .essay-tweets-display {

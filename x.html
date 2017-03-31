@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+
+    .bordered {
+      padding: 20px;
+      border: 2px dotted black;
+    }
+
+    .on { display: none; user-select: none; cursor: hand;}
+    .hover:hover .off { display: none; user-select: none;}
+    .hover:hover .on { display: inline; user-select: none; cursor: hand;}
+
+    </style>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/wrappers/api.js"></script>
+    <script src="/js/models/tweet.js"></script>
+    <script src="/js/models/timeline.js"></script>
+    <script src="/js/models/essay.js"></script>
+    <script src="/js/models/essayTweet.js"></script>
+    <script src="/js/views/essayView.js"></script>
+    <script src="/js/views/essayTweetsView.js" charset="utf-8"></script>
+    <script src="/js/views/initialView.js"></script>
+    <script src="/js/views/readView.js"></script>
+    <script src="/js/views/writeView.js"></script>
+    <script src="/js/views/htmlGeneratorView.js"></script>
+    <script src="/js/controllers/tweetAPIController.js" charset="utf-8"></script>
+    <script src="/js/controllers/readController.js" charset="utf-8"></script>
+    <script src="/js/controllers/tweetEssayController.js" charset="utf-8"></script>
+    <script src="/js/controllers/essayTweetsController.js" charset="utf-8"></script>
+    <script src="/js/controllers/writeController.js" charset="utf-8"></script>
+    <script src="/js/controllers/initialController.js" charset="utf-8"></script> -->
+    <script src="/js/app.js"></script>
+    <title>Tweet Papers Client</title>
+  </head>
+  <body>
+    <div class="read-wrapper container">
+      <div class="input">
+        <!-- <input type="text" class="100" value="">
+        <input type="text" class="200" value="">
+        <input type="text" class="300" value="">
+        <input type="text" class="400" value=""> -->
+        <p>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+          <span data-id="s">But how can we tell a hop click</span>
+          <span data-id="e">a skip click you might ask?</span>
+          <span data-id="s">Event listeners’ trigger functions p</span>
+          <span data-id="e">ass event objects into their action functions.</span>
+        </p>
+      </div>
+      <div class="output">
+      </div>
+    </div>
+    <script>
+      // $('.100').keyup((event) => {
+      //   alert('hey')
+      // })
+
+      $(window).keydown((e) => {
+        if (e.key == "Alt") {
+          $('p').on("click", (event) => {
+            $paragraphBreak = event.target
+            if ($paragraphBreak.dataset.id == 's') {
+              $( '</p><p>' ).insertBefore( $paragraphBreak )
+            } else {
+              $( '</p><p>' ).insertAfter( $paragraphBreak )
+            }
+          })
+        } else {
+        }
+      })
+      // $('p').on("contextmenu", (event) => {
+      //   $paragraphBreak = event.target
+      //
+      //   if ($paragraphBreak.dataset.id == 's') {
+      //     $( '</p><p>' ).insertBefore( $paragraphBreak )
+      //     // $paragraphBreak.prepend('</p><p>')
+      //   } else {
+      //     $( '</p><p>' ).insertAfter( $paragraphBreak )
+      //   }
+      // })
+    </script>
+  </body>
+</html>
