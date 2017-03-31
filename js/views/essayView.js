@@ -13,10 +13,10 @@ class EssayView {
 
   static essayTemplate(essayText) {
     let linkText = EssayView.linkFormat(essayText)
-    return `<p id="essay-text">${linkText}</p><br />
+    return `<p id="essay-text">${linkText}</p><br>
     <div class='row'>
-    <input type="Submit" class="col-md-3" value="Copy To Clipboard" id="copy-essay"/>
-    <input type="Submit" class="col-md-3" value="Generate Embed HTML" id="generate-essay-html"/>
+      <input type="Submit" class="col-md-3" value="Copy To Clipboard" id="copy-essay"/>
+      <input type="Submit" class="col-md-3" value="Generate Embed HTML" id="generate-essay-html"/>
     </div>`
 
   }

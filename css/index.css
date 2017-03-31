@@ -1,0 +1,97 @@
+.container-fluid {
+  background-color: rgb(245, 248, 250);
+}
+
+.header {
+  background-color: rgb(29,161,242);
+  color: white;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  border-radius: 0px 0px 7px 7px;
+}
+div {
+  /*background-color: #fff;*/
+}
+
+.content-wrapper {
+  /*margin-left: 1em;*/
+  padding-left: 0em;
+}
+
+.bordered {
+  margin-top: 2.5em;
+  padding-left: 1em;
+  padding-top: 1em;
+  border: thin solid black;
+  border-radius: 4px;
+  height: 7em;
+  max-width: 50em;
+  background-color: white;
+  height: 100%;
+  min-height: 7em;
+}
+
+.input {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+.output {
+  /*background-color: #fff;*/
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+/* --------READ SPECIFIC --------------*/
+
+  .Tweet-URL-text {
+    width: 100%;
+    max-width: 23em;
+  }
+
+
+/* ------- WRITE SPECIFIC ----------- */
+
+.essay-tweets-display {
+  padding-bottom: 1em;
+}
+
+.essay-tweets-display p {
+  background-color: #fff;
+  max-width: 40em;
+  margin-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  margin-bottom: .2em;
+  /*border-radius: 10px 10px 0px 0px;*/
+}
+
+#tweet-1 {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.write-essay-text {
+  width: 100%;
+  max-width: 40em;
+  margin-right: 2em;
+  min-height: 15em;
+  margin-bottom: 1em;
+}
+
+.essay-text-form {
+  padding-right: 1em;
+}
+
+.prompt p {
+  /* bold */
+}
+
+
+
+/*.on { display: none; user-select: none; cursor: hand;}*/
+.bordered:hover {
+  background-color: rgb(232,245,253);
+}
+.hover:hover .on { display: inline; user-select: none; cursor: hand;}
