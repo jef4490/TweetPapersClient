@@ -3,10 +3,15 @@ class EssayTweetsController {
     this.$target = $target
     this.tweets = essay.tweets
     this.render()
+    this.setParagraphListener()
   }
 
   render(){
     return EssayTweetsView.renderTweets(this.$target, this.tweets)
+  }
+
+  setParagraphListener() {
+    
   }
 
 }

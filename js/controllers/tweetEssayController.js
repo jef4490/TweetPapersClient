@@ -15,6 +15,7 @@ class TweetEssayController {
 
   renderEssay(){
     EssayView.renderParagraph(this.$target, this)
+    this.setParagraphListener()
     this.setEmbedListener()
     return this.setEssayCopyListener()
   }
@@ -39,6 +40,22 @@ class TweetEssayController {
   setEmbedListener() {
     $('#generate-essay-html').on("click", (event) => {
       HtmlGeneratorView.renderEmbedHtml(this)
+    })
+  }
+
+  setParagraphListener() {
+    $(window).keydown((e) => {
+      if (e.key == "Alt") {
+        $('p').on("click", (event) => {
+          let $paragraphBreak = event.target
+          if ($paragraphBreak.dataset.id == 's') {
+            $( '</p><p>' ).insertBefore( $paragraphBreak )
+          } else {
+            $( '</p><p>' ).insertAfter( $paragraphBreak )
+          }
+        })
+      } else {
+      }
     })
   }
 

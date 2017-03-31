@@ -2,7 +2,8 @@ class EssayView {
 
   static renderParagraph($target, essay){
     let essayText = essay.tweets.map((tweet) => {
-      return tweet.text.replace(essay.regex, "")
+      let text = tweet.text.replace(essay.regex, "")
+      return EssayView.spanFormat(text)
     }).join("")
     return $target.find('#essay').html(EssayView.essayTemplate(essayText))
   }
@@ -29,6 +30,17 @@ class EssayView {
     `
   }
 
+  static spanFormat(text) {
+    let startTag = '<span data-id="s">'
+    let endTag = '<span data-id="s">'
+    let closeTag = '</span>'
+    let wordArr = text.split(" ")
+    wordArr.push(closeTag)
+    wordArr.unshift(startTag)
+    wordArr.splice((wordArr.length), 0, `${closeTag}${endTag}`)
+    return wordArr.join(" ")
+  }
+
   static linkFormat(text) {
     let wordArray = text.split(' ')
     let regexLink = /(https|ftp|http):\/\/.+[^.!?)(]/
@@ -45,7 +57,6 @@ class EssayView {
     })
     return wordArray.join(" ")
   }
-
 }
 
 // <h2><a href="${user.link}">${user.screenName}</a></h2>
