@@ -10,6 +10,20 @@ class InitialView {
     }
   }
 
+  static renderInitial(){
+    $('.output').html('')
+    $('.input').html(`
+      <div class="col-xs-12 button row-fluid">
+        <div class="read bordered hover row-fluid">
+          <h1 class='off'>Read a Twitter Essay!</h1>
+        </div>
+        <div class="write bordered hover row-fluid">
+          <h1 class='off'>Write a Twitter Essay!</h1>
+        </div>
+      </div>
+    `)
+  }
+
   static readView() {
 
   }
