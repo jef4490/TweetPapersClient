@@ -64,6 +64,15 @@ div {
     border-color: rgb(225,232,237);
   }
 
+  .essay-buttons {
+    color: #fff;
+    background-color: rgb(29,161,242);
+    border-style: none;
+    border-radius: 6px;
+    margin-left: 3em;
+    margin-bottom: 1em;
+  }
+
 /* ------- WRITE SPECIFIC ----------- */
 
 .essay-tweets-display {
