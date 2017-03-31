@@ -6,7 +6,7 @@ class HtmlGeneratorView {
       return a
     }, [])
     let timelineHtmlCode = timelineHtmlArray.join("")
-    $('#tweet-render').html(`<h1>Tweet Essay:</h1>${timelineHtmlCode}`)
+    $('#tweet-render').html(`<h3>Tweet Essay:</h3>${timelineHtmlCode}`)
     $('#html-render').html(`${HtmlGeneratorView.formTemplate(timelineHtmlCode)}`)
   }
 
@@ -15,6 +15,6 @@ class HtmlGeneratorView {
   }
 
   static formTemplate(html) {
-    return `<h1>Raw HTML:</h1></br><textarea class="form-control" id="essay-raw-html" rows="6">${html}</textarea>`
+    return `<h3>Raw HTML:</h3></br><textarea class="form-control" id="essay-raw-html" rows="6">${html}</textarea>`
   }
 }

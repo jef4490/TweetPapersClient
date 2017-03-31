@@ -4,7 +4,7 @@ class Essay {
     this.i = -1
     this.links = text.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm)
     this.linkless = text.replace(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm, `&K^jK&`)
-    this.sentences = this.linkless.match(/(?!.?!).*?[.?!]+[\)”]?/g)
+    this.sentences = this.linkless.match(/(?!.?!).*?[.?!]+[\)”"]?/g)
     this.linkReplacer()
     this.sentences = this.linkSentences
     this.tweets = []

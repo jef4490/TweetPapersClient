@@ -1,4 +1,4 @@
-// Write Tweet Essay
+// // Write Tweet Essay
 // $(() => {
 //   $('.essay-text-form').on('submit', () => {
 //     event.preventDefault();
