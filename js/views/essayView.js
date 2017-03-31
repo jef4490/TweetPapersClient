@@ -45,9 +45,11 @@ class EssayView {
     wordArray = wordArray.map((item) => {
       if (item.search(regexLink) != -1) {
         let hyperlink = `<a href="${item.match(regexLink)[0]}">${item.match(regexLink)[0]}</a>`
-        if (item.search(/[.!?)()]$/) != -1 || item.search(/^[.!?)()]/) != -1) {
+        if (item.match(/[.!?)(]$/) != null) {
           hyperlink += item.match(/[.!?)(]$/)
-          hyperlink = item.match(/^[.!?)(]/) + hyperlink
+        }
+        if (item.match(/^[?)(]/) != null) {
+          hyperlink = item.match(/^[?)(]/) + hyperlink
         }
         return hyperlink
       } else {
