@@ -23,9 +23,9 @@ class ReadView {
       </div>
     </div>
     <div id="html-generator" class="row">
-      <div id="tweet-render" class="col-md-6">
+      <div id="tweet-render" class="col-xs-6">
       </div>
-      <div id="html-render" class="col-md-6">
+      <div id="html-render" class="col-xs-5">
       </div>
     </div>
     `
