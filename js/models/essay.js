@@ -4,7 +4,7 @@ class Essay {
     this.i = -1
     this.links = text.match(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm)
     this.linkless = text.replace(/(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm, `&K^jK&`)
-    this.sentences = this.linkless.match(/(?!.?!).*?[.?!]+[\)”"]?/g)
+    this.sentences = this.linkless.match(/(?!.?!).*?[.?!\r\n]+[\)”"]?/g)
     this.linkReplacer()
     this.sentences = this.linkSentences
     this.tweets = []
@@ -23,16 +23,29 @@ class Essay {
     return this.linkSentences
   }
 
+  splitConstruct(sentencePortion){
+    if (sentencePortion.length < 135) {
+      return this.tweets.push(new EssayTweet(sentencePortion))
+    }
+    let midpoint = Math.floor(sentencePortion.length/2)
+    while (sentencePortion[midpoint] != " ") {
+      midpoint++
+    }
+    this.splitConstruct(sentencePortion.slice(0, midpoint))
+    this.splitConstruct(sentencePortion.slice(midpoint, sentencePortion.length))
+  }
+
   constructTweets() {
     let i = 0
     while (i < this.sentences.length) {
       if (this.sentences[i].length > 135) {
-        let midpoint = Math.floor(this.sentences[i].length/2)
-          while (this.sentences[i][midpoint] != " ") {
-            midpoint ++
-          }
-        this.tweets.push(new EssayTweet(this.sentences[i].slice(0, midpoint)))
-        this.tweets.push(new EssayTweet(this.sentences[i].slice(midpoint, this.sentences[i].length)))
+        this.splitConstruct(this.sentences[i])
+        // let midpoint = Math.floor(this.sentences[i].length/2)
+        //   while (this.sentences[i][midpoint] != " ") {
+        //     midpoint ++
+        //   }
+        // this.tweets.push(new EssayTweet(this.sentences[i].slice(0, midpoint)))
+        // this.tweets.push(new EssayTweet(this.sentences[i].slice(midpoint, this.sentences[i].length)))
         i++
       }
       let current = ""
