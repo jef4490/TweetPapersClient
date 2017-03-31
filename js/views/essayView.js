@@ -23,10 +23,9 @@ class EssayView {
 
   static userTemplate(essay) {
     let user = essay.tweets[0].user
-    return `<h2><a href="${user.link}">${user.screenName}</a></h2>
+    return `
     ${HtmlGeneratorView.tweetTemplate(essay.tweets[0])}
-    <img src="${user.profilePicture}"/>
-    <h3>on ${essay.tweets[0].date}</h3>`
+    `
   }
 
   static linkFormat(text) {
@@ -47,3 +46,7 @@ class EssayView {
   }
 
 }
+
+// <h2><a href="${user.link}">${user.screenName}</a></h2>
+// <img src="${user.profilePicture}"/>
+// <h3>on ${essay.tweets[0].date}</h3>
