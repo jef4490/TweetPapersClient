@@ -42,6 +42,21 @@ div {
   margin-top: 1em;
 }
 
+.working-status {
+  color: #fff;
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+}
+
+.ready-status {
+  color: #90EE90;
+}
+
+.failed-status {
+  color: red;
+}
+
 /* --------READ SPECIFIC --------------*/
 
   .Tweet-URL-text {
