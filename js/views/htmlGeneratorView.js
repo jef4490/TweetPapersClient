@@ -15,6 +15,6 @@ class HtmlGeneratorView {
   }
 
   static formTemplate(html) {
-    return `<h3>Raw HTML:</h3></br><textarea class="form-control" id="essay-raw-html" rows="6">${html}</textarea>`
+    return `<h3>Raw HTML:</h3></br><textarea class="form-control" id="essay-raw-html" rows="5">${html}</textarea>`
   }
 }
