@@ -91,10 +91,8 @@
         if (e.key == "Alt") {
           $('p').on("click", (event) => {
             $paragraphBreak = event.target
-
             if ($paragraphBreak.dataset.id == 's') {
               $( '</p><p>' ).insertBefore( $paragraphBreak )
-              // $paragraphBreak.prepend('</p><p>')
             } else {
               $( '</p><p>' ).insertAfter( $paragraphBreak )
             }

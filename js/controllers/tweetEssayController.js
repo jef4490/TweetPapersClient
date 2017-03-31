@@ -33,6 +33,7 @@ class TweetEssayController {
       range.selectNodeContents(text);
       selection.removeAllRanges();
       selection.addRange(range);
+
       document.execCommand('copy');
     })
   }
@@ -48,15 +49,16 @@ class TweetEssayController {
       if (e.key == "Alt") {
         $('p').on("click", (event) => {
           let $paragraphBreak = event.target
-          if ($paragraphBreak.dataset.id == 's') {
+          if ($paragraphBreak.dataset.type == 's') {
             $( '</p><p>' ).insertBefore( $paragraphBreak )
           } else {
-            $( '</p><p>' ).insertAfter( $paragraphBreak )
           }
         })
       } else {
       }
     })
+    $(window).keyup((e) => {
+        $('p').off()
+    })
   }
-
 }
